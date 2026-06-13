@@ -1,0 +1,59 @@
+\begin{table}[!htbp]\centering
+\caption{Scaling study on random simplex-like polytopes (30 instances per size; 10 for $m{=}1000$), corner start, $\varepsilon=10^{-3}$. Jacobi (P) = Moretti's P-center sweep; recursive (CN) = the CN-center sweep; hybrid = CN$\to$P switch; CN-rand / CN-greedy = randomized / greedy orderings on a fixed 30-sweep budget with 10-sweep tail averaging (no displacement stopping, so no sweep count). `sweeps' is sweeps to $\Delta<\varepsilon$ ($m$ chords per sweep); rel.\ $C$@5 is centrality after a 5-sweep budget; rel.\ $C$ is centrality at the method's stopping point, relative to the Chebyshev radius. Time compares interpreted Python sweep loops against compiled solvers (HiGHS, vectorized Newton); chord counts are the primary work measure.}
+\label{tab:scaling}
+\footnotesize
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrrr}
+\toprule
+$(m,n)$ & method & sweeps & rel.\ $C$@5 & rel.\ $C$ final & time (s) \\
+\midrule
+$(25,2)$ & Jacobi (P) & 9.7 $\pm$ 4.5 & 0.91 $\pm$ 0.04 & 0.91 $\pm$ 0.04 & 0.009 $\pm$ 0.004 \\
+ & recursive (CN) & 15.4 $\pm$ 6.2 & 0.80 $\pm$ 0.10 & 0.86 $\pm$ 0.07 & 0.022 $\pm$ 0.009 \\
+ & hybrid & 19.2 $\pm$ 7.9 & 0.83 $\pm$ 0.11 & 0.91 $\pm$ 0.04 & 0.021 $\pm$ 0.009 \\
+ & CN-rand (tail) & -- & 0.86 $\pm$ 0.07 & 0.89 $\pm$ 0.05 & 0.042 $\pm$ 0.003 \\
+ & CN-greedy (tail) & -- & 0.89 $\pm$ 0.06 & 0.98 $\pm$ 0.01 & 0.051 $\pm$ 0.003 \\
+ & analytic center & -- & -- & 0.22 $\pm$ 0.02 & 0.001 $\pm$ 0.000 \\
+ & Chebyshev LP & -- & -- & 1.00 (exact) & 0.003 $\pm$ 0.001 \\
+\midrule
+$(50,2)$ & Jacobi (P) & 8.0 $\pm$ 4.8 & 0.93 $\pm$ 0.02 & 0.93 $\pm$ 0.02 & 0.014 $\pm$ 0.008 \\
+ & recursive (CN) & 17.9 $\pm$ 4.7 & 0.81 $\pm$ 0.07 & 0.88 $\pm$ 0.06 & 0.046 $\pm$ 0.012 \\
+ & hybrid & 19.1 $\pm$ 6.5 & 0.84 $\pm$ 0.08 & 0.92 $\pm$ 0.02 & 0.038 $\pm$ 0.013 \\
+ & CN-rand (tail) & -- & 0.85 $\pm$ 0.09 & 0.91 $\pm$ 0.04 & 0.079 $\pm$ 0.005 \\
+ & CN-greedy (tail) & -- & 0.89 $\pm$ 0.05 & 0.98 $\pm$ 0.01 & 0.095 $\pm$ 0.003 \\
+ & analytic center & -- & -- & 0.13 $\pm$ 0.01 & 0.001 $\pm$ 0.000 \\
+ & Chebyshev LP & -- & -- & 1.00 (exact) & 0.003 $\pm$ 0.000 \\
+\midrule
+$(100,10)$ & Jacobi (P) & 10.5 $\pm$ 11.5 & 0.80 $\pm$ 0.02 & 0.79 $\pm$ 0.02 & 0.041 $\pm$ 0.044 \\
+ & recursive (CN) & 51.2 $\pm$ 31.9 & 0.52 $\pm$ 0.04 & 0.62 $\pm$ 0.05 & 0.298 $\pm$ 0.185 \\
+ & hybrid & 19.0 $\pm$ 10.3 & 0.58 $\pm$ 0.04 & 0.67 $\pm$ 0.05 & 0.080 $\pm$ 0.042 \\
+ & CN-rand (tail) & -- & 0.51 $\pm$ 0.10 & 0.47 $\pm$ 0.10 & 0.172 $\pm$ 0.004 \\
+ & CN-greedy (tail) & -- & 0.31 $\pm$ 0.04 & 0.69 $\pm$ 0.06 & 0.220 $\pm$ 0.006 \\
+ & analytic center & -- & -- & 0.19 $\pm$ 0.01 & 0.001 $\pm$ 0.000 \\
+ & Chebyshev LP & -- & -- & 1.00 (exact) & 0.005 $\pm$ 0.000 \\
+\midrule
+$(200,20)$ & Jacobi (P) & 4.2 $\pm$ 0.4 & 0.76 $\pm$ 0.01 & 0.76 $\pm$ 0.01 & 0.037 $\pm$ 0.007 \\
+ & recursive (CN) & 15.6 $\pm$ 8.5 & 0.44 $\pm$ 0.05 & 0.53 $\pm$ 0.05 & 0.196 $\pm$ 0.114 \\
+ & hybrid & 5.1 $\pm$ 0.2 & 0.51 $\pm$ 0.03 & 0.51 $\pm$ 0.03 & 0.051 $\pm$ 0.004 \\
+ & CN-rand (tail) & -- & 0.39 $\pm$ 0.08 & 0.36 $\pm$ 0.09 & 0.380 $\pm$ 0.011 \\
+ & CN-greedy (tail) & -- & 0.17 $\pm$ 0.02 & 0.39 $\pm$ 0.04 & 0.503 $\pm$ 0.018 \\
+ & analytic center & -- & -- & 0.17 $\pm$ 0.01 & 0.001 $\pm$ 0.000 \\
+ & Chebyshev LP & -- & -- & 1.00 (exact) & 0.008 $\pm$ 0.001 \\
+\midrule
+$(500,20)$ & Jacobi (P) & 4.0 $\pm$ 0.0 & 0.76 $\pm$ 0.01 & 0.76 $\pm$ 0.01 & 0.095 $\pm$ 0.006 \\
+ & recursive (CN) & 11.4 $\pm$ 1.6 & 0.45 $\pm$ 0.04 & 0.53 $\pm$ 0.05 & 0.409 $\pm$ 0.059 \\
+ & hybrid & 5.0 $\pm$ 0.0 & 0.51 $\pm$ 0.04 & 0.51 $\pm$ 0.04 & 0.142 $\pm$ 0.008 \\
+ & CN-rand (tail) & -- & 0.45 $\pm$ 0.05 & 0.46 $\pm$ 0.07 & 1.110 $\pm$ 0.065 \\
+ & CN-greedy (tail) & -- & 0.16 $\pm$ 0.02 & 0.38 $\pm$ 0.03 & 1.608 $\pm$ 0.105 \\
+ & analytic center & -- & -- & 0.08 $\pm$ 0.00 & 0.001 $\pm$ 0.000 \\
+ & Chebyshev LP & -- & -- & 1.00 (exact) & 0.017 $\pm$ 0.002 \\
+\midrule
+$(1000,50)$ & Jacobi (P) & 3.9 $\pm$ 0.3 & 0.72 $\pm$ 0.01 & 0.72 $\pm$ 0.01 & 0.270 $\pm$ 0.031 \\
+ & recursive (CN) & 6.7 $\pm$ 0.8 & 0.38 $\pm$ 0.03 & 0.41 $\pm$ 0.03 & 0.784 $\pm$ 0.151 \\
+ & hybrid & 4.0 $\pm$ 0.0 & 0.45 $\pm$ 0.02 & 0.45 $\pm$ 0.02 & 0.374 $\pm$ 0.033 \\
+ & CN-rand (tail) & -- & 0.37 $\pm$ 0.05 & 0.36 $\pm$ 0.05 & 3.551 $\pm$ 0.129 \\
+ & CN-greedy (tail) & -- & 0.08 $\pm$ 0.00 & 0.13 $\pm$ 0.01 & 5.610 $\pm$ 0.313 \\
+ & analytic center & -- & -- & 0.09 $\pm$ 0.00 & 0.008 $\pm$ 0.002 \\
+ & Chebyshev LP & -- & -- & 1.00 (exact) & 0.069 $\pm$ 0.015 \\
+\bottomrule
+\end{tabular}
+\end{table}

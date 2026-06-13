@@ -1,0 +1,17 @@
+\begin{table}[t]\centering
+\caption{Redundancy stress test: half of the constraints of 30 random $50\times10$ polytopes are duplicated $\times2$ / $\times5$. Entries are the drift of the computed center, $\|x_{dup}-x_{orig}\|/r_{cheb}$ (mean $\pm$ std).}
+\label{tab:redundancy}
+\small
+\begin{tabular}{lrr}
+\toprule
+method & duplication $\times2$ & duplication $\times5$ \\
+\midrule
+Chebyshev & 0.0000 $\pm$ 0.0000 & 0.0000 $\pm$ 0.0000 \\
+analytic & 0.3908 $\pm$ 0.0266 & 0.7859 $\pm$ 0.0593 \\
+P-center & 0.7650 $\pm$ 0.2557 & 1.5274 $\pm$ 0.2993 \\
+P-center (mult.\ weights) & 0.0000 $\pm$ 0.0000 & 0.0000 $\pm$ 0.0000 \\
+CN-center & 1.5498 $\pm$ 0.5241 & 1.4817 $\pm$ 0.4799 \\
+CN-center (mult.\ weights) & 1.5560 $\pm$ 0.5528 & 1.4817 $\pm$ 0.4428 \\
+\bottomrule
+\end{tabular}
+\end{table}

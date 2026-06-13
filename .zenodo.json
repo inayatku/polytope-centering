@@ -1,0 +1,27 @@
+{
+    "title": "Projection-Based Centering of Polytopes Revisited: code, data, figures, and tables",
+    "upload_type": "software",
+    "description": "Reproduction package for the paper 'Projection-Based Centering of Polytopes Revisited': Python implementation of the P-center and CN-center projection methods with orderings, blocks, multiplicity weights, relaxation, and hybrid variants; all experiments (E1-E7), raw results, figures, and tables. Every number, figure, and table in the paper reproduces from fixed random seeds. Follow-up to Inayatullah et al., Advances in Operations Research 2019, doi:10.1155/2019/8218329.",
+    "creators": [
+        {
+            "name": "Inayatullah, Syed",
+            "affiliation": "Department of Mathematics, University of Karachi, Pakistan"
+        }
+    ],
+    "keywords": [
+        "polytope center",
+        "projection methods",
+        "Chebyshev center",
+        "analytic center",
+        "linear programming",
+        "interior point"
+    ],
+    "license": "MIT",
+    "related_identifiers": [
+        {
+            "identifier": "10.1155/2019/8218329",
+            "relation": "isSupplementTo",
+            "scheme": "doi"
+        }
+    ]
+}

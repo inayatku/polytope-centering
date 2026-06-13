@@ -1,0 +1,22 @@
+\begin{table}[t]\centering
+\caption{Replication on the second instance family (rows uniform on the unit sphere, $b=\mathbf{1}$; round geometry, near-boundary start; 30 instances per size). Same protocol as Table~\ref{tab:scaling}.}
+\label{tab:sphere}
+\small
+\begin{tabular}{llrr}
+\toprule
+$(m,n)$ & method & sweeps & rel.\ $C$ final \\
+\midrule
+$(100,10)$ & P & 58.8 $\pm$ 10.1 & 0.83 $\pm$ 0.04 \\
+ & CN & 154.7 $\pm$ 55.7 & 0.64 $\pm$ 0.04 \\
+ & CN-rand & -- & 0.74 $\pm$ 0.05 \\
+ & CN-greedy & -- & 0.98 $\pm$ 0.01 \\
+ & analytic & -- & 0.40 $\pm$ 0.12 \\
+\midrule
+$(500,20)$ & P & 83.3 $\pm$ 8.3 & 0.82 $\pm$ 0.03 \\
+ & CN & 273.8 $\pm$ 55.5 & 0.48 $\pm$ 0.05 \\
+ & CN-rand & -- & 0.57 $\pm$ 0.05 \\
+ & CN-greedy & -- & 0.96 $\pm$ 0.01 \\
+ & analytic & -- & 0.50 $\pm$ 0.09 \\
+\bottomrule
+\end{tabular}
+\end{table}

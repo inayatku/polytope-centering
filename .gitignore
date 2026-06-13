@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+paper/main.aux
+paper/main.log
+paper/main.out
+paper/main.fls
+paper/main.fdb_latexmk
+paper/main.pdf
+submission/main.pdf
+# Manuscript kept private (not in the public reproduction package)
+paper/main.tex
+paper/out.txt
+submission/main.tex
+submission/cover_letter.md
+code/review_findings.txt
+code/review_tail.txt
+code/harvest_review.py
